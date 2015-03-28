@@ -1,7 +1,5 @@
 Mi CV
 
-Me gusta soda stereo
-
 2015.Gerardo Mansilla
 
 
@@ -35,7 +33,6 @@ Merge two branches:
 remove branch:
   git branch -d BRANCH-NAME
 
-
-
-
+rebase branches:
+  git rebase BRANCH-NAME
 
