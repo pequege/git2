@@ -1,3 +1,11 @@
+Mi CV
+
+Me gusta soda stereo
+
+2015.Gerardo Mansilla
+
+
+=============
 Curso Git
 
 GitHub 2015
@@ -11,4 +19,23 @@ git es distribuido - funciona offline!
 the log only works online
 
 git works on binary level
+
+default branch: branch master
+
+create new branch:
+  1)  git checkout -b NAME
+
+  2)  git branch NAME
+      git checkout NAME
+
+Merge two branches:
+*nos ubicamos en el branch que queremos mantener:
+  git merge BRANCH-NAME
+
+remove branch:
+  git branch -d BRANCH-NAME
+
+
+
+
 
