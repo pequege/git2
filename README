@@ -36,3 +36,26 @@ remove branch:
 rebase branches:
   git rebase BRANCH-NAME
 
+===================================
+GIT - security set
+it use SSH - security protocol
+
+1) SSH - Key(public-id-rsa-public and private-id-rsa)
+
+to add a new key:
+
+$ssh-keygen -t rsa -C email@example.com
+....
+
+
+=================
+work flow en grupo:
+
+1) git status
+2) git pull origin master*
+3) git checkout -b branch-trabajo
+4) trabajo...
+5) (master) git pull origin master*
+6) (branch-trabajo) git rebase master
+7) (master) git merge branch-trabajo
+8) (master) git push origin master*
