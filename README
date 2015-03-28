@@ -36,6 +36,12 @@ remove branch:
 rebase branches:
   git rebase BRANCH-NAME
 
+remove files:
+  $git remove ##
+  $git add -A//add set of changes with removed files
+
+undo changes:
+  git checkout ##FILE
 ===================================
 GIT - security set
 it use SSH - security protocol
@@ -51,11 +57,68 @@ $ssh-keygen -t rsa -C email@example.com
 =================
 work flow en grupo:
 
-1) git status
-2) git pull origin master*
-3) git checkout -b branch-trabajo
-4) trabajo...
-5) (master) git pull origin master*
-6) (branch-trabajo) git rebase master
-7) (master) git merge branch-trabajo
-8) (master) git push origin master*
+  sincronizar (master)
+  1) git status
+  2) git pull origin master*
+
+  3) git checkout -b branch-trabajo
+  4) trabajo...
+
+  sincronizar branch de trabajo:
+  5) (master) git pull origin master*
+  6) (branch-trabajo) git rebase master
+  7) (master) git merge branch-trabajo
+  8) (master) git push origin master*
+
+
+work flow en grupo(pro):
+
+
+  1) crear branch-trabajo
+  2) Modificar + commit (trabajar)
+
+  3) git push -u origin branch-trabajo
+  
+  al otro dia
+  
+  4) Sincronizar (master)
+
+  5)  sincronizar branch de trabajo:
+        (master) git pull origin master*
+        (branch-trabajo) git rebase master
+        (master) git merge branch-trabajo
+        (master) git push origin master*
+  6)  trabajo: modificaciones, commits...
+  7)  git pull origin branch-trabajo 
+  8)  git push origin branch-trabajo
+  9)  git sincronización de todo(master con branch-trabajo):
+        $git pull origin master
+        $git pull origin branch-trabajo
+        $git rebase master
+        $git checkout master
+        $git merge branch-trabajo
+        $git push origin master
+        //borrado de branch-trabajo
+        $git branch -d branch-trabajo
+        $git push origin :branch-trabajo//borra el repositorio de github
+
+work flow en grupo(ninja):
+eeem.. se usan Pull Request desde gitHub
+
+
+Cherry pick:
+
+1)  sincronizar master
+2)  (branch-trabajo)$git log //averiguo el hash
+3)  (master)$git cherry_pick #hash
+
+
+
+"me mandé un moco":
+  $git reset --soft// -1 commit
+
+  $git reset --hard// regresa al ultimo commit
+
+  $git reset --hard HEAD// regresa al primer commit del branch
+
+  $git reset --hard HEAD´´// regresa al primer commit de master
